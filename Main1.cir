@@ -1,0 +1,41 @@
+.title KiCad schematic
+.include "2N3904.LIB.lib"
+.include "2N3906.lib"
+.include "CAPMP3216X166.kicad_mod"
+.include "NE555.lib"
+.include "TSOP1738.lib"
+V1 Net-_R1-Pad1_ GND dc 5
+R1 Net-_R1-Pad1_ Net-_R1-Pad2_ 1k
+R2 Net-_Q1-Pad2_ GND 10k
+R3 Net-_R1-Pad1_ /Input/HallSensorOut 10k
+R4 Net-_C1-Pad1_ GND 10k
+C1 Net-_C1-Pad1_ GND 47u
+SW1 Net-_R1-Pad2_ Net-_Q1-Pad2_ SW_Reed_Opener
+Q1 /Input/HallSensorOut Net-_Q1-Pad2_ Net-_C1-Pad1_ 2N3906
+C4 /IRSensor/IROut 0 100u
+M1 /IRSensor/IROut 0 Motor_DC
+MotorLED1 0 /IRSensor/IROut LED
+V2 Net-_D1-Pad2_ GND dc 5
+D1 Net-_D1-Pad1_ Net-_D1-Pad2_ IR26-21C_L110_TR8
+XU1 0 Net-_U1-Pad2_ Net-_R8-Pad2_ TSOP1738
+V3 Net-_U1-Pad2_ 0 5V
+R8 Net-_Q3-Pad2_ Net-_R8-Pad2_ 10k
+R9 Net-_R9-Pad1_ Net-_D2-Pad2_ 220
+V4 Net-_R9-Pad1_ 0 5V
+R5 Net-_D1-Pad2_ Net-_C3-Pad1_ 10k
+C3 Net-_C3-Pad1_ GND 47u
+R6 Net-_Q2-Pad2_ Net-_IC1-Pad3_ 1k
+R7 Net-_D1-Pad2_ Net-_D1-Pad1_ 220E
+Vin1 /Input/HallSensorOut GND dc 0 ac 1 sin(0,1,10k,0,0)
+Vt1 0 /IRSensor/IROut dc 0
+Q2 GND Net-_Q2-Pad2_ Net-_D1-Pad1_ 2N3904
+D2 /IRSensor/IROut Net-_D2-Pad2_ LED
+Q3 0 Net-_Q3-Pad2_ /IRSensor/IROut 2N3906
+C2 Net-_C2-Pad1_ GND 0.01u
+XIC1 /Input/HallSensorOut Net-_IC1-Pad3_ Net-_D1-Pad2_ Net-_C2-Pad1_ Net-_C3-Pad1_ Net-_C3-Pad1_ Net-_D1-Pad2_ UA555
+.tran 0.01ms 0.1s 
+.control 
+run 
+gnuplot IRSensor.plt V(Vin1),V(Vt1) 
+.endc 
+.end

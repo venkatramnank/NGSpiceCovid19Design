@@ -1,0 +1,100 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 2400 3100 0    50   Input ~ 0
+Resultin
+$Comp
+L pspice:C C4
+U 1 1 5ECD351D
+P 2850 3350
+F 0 "C4" H 3028 3396 50  0000 L CNN
+F 1 "100u" H 3028 3305 50  0000 L CNN
+F 2 "" H 2850 3350 50  0001 C CNN
+F 3 "~" H 2850 3350 50  0001 C CNN
+	1    2850 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Motor:Motor_DC M1
+U 1 1 5ECD8678
+P 4350 3300
+F 0 "M1" H 4508 3296 50  0000 L CNN
+F 1 "Motor_DC" H 4508 3205 50  0000 L CNN
+F 2 "" H 4350 3210 50  0001 C CNN
+F 3 "~" H 4350 3210 50  0001 C CNN
+	1    4350 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 3100 2850 3100
+Connection ~ 2850 3100
+$Comp
+L Device:LED MotorLED1
+U 1 1 5ECD9548
+P 3450 3400
+F 0 "MotorLED1" V 3489 3282 50  0000 R CNN
+F 1 "LED" V 3398 3282 50  0000 R CNN
+F 2 "" H 3450 3400 50  0001 C CNN
+F 3 "~" H 3450 3400 50  0001 C CNN
+	1    3450 3400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2850 3100 3450 3100
+Wire Wire Line
+	3450 3250 3450 3100
+Connection ~ 3450 3100
+Wire Wire Line
+	3450 3100 4350 3100
+$Comp
+L pspice:0 #GND01
+U 1 1 5ECDB355
+P 2850 3850
+F 0 "#GND01" H 2850 3750 50  0001 C CNN
+F 1 "0" H 2850 3939 50  0000 C CNN
+F 2 "" H 2850 3850 50  0001 C CNN
+F 3 "~" H 2850 3850 50  0001 C CNN
+	1    2850 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND02
+U 1 1 5ECDB66C
+P 3450 3850
+F 0 "#GND02" H 3450 3750 50  0001 C CNN
+F 1 "0" H 3450 3939 50  0000 C CNN
+F 2 "" H 3450 3850 50  0001 C CNN
+F 3 "~" H 3450 3850 50  0001 C CNN
+	1    3450 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND03
+U 1 1 5ECDBACB
+P 4350 3850
+F 0 "#GND03" H 4350 3750 50  0001 C CNN
+F 1 "0" H 4350 3939 50  0000 C CNN
+F 2 "" H 4350 3850 50  0001 C CNN
+F 3 "~" H 4350 3850 50  0001 C CNN
+	1    4350 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 3850 4350 3600
+Wire Wire Line
+	3450 3550 3450 3850
+Wire Wire Line
+	2850 3600 2850 3850
+$EndSCHEMATC
