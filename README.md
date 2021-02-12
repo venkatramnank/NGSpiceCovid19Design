@@ -14,7 +14,7 @@ The below images show the hierarchial blocks of the design.
 The project is the project work for linux for ECE engineers course. The current situation of corona is also another cause.
 
 ## Acknowledgments
-I would like to thank Jayant Saxena for being a team mate for this project.I would also like to thank Dr. G N rao for guiding us.
+I would like to thank Jayant Saxena for being a team mate for this project.I would also like to thank Dr. G N Rao for guiding us.
 
 ## Contact
 For doubts and contributions contact venkatramnank@gmail.com
